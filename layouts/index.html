@@ -49,9 +49,13 @@
                                 <div class="page-heading">{{ i18n "latest_talks" }}</div>
                                 <ul class="px-0">
                                     {{ range (first .Site.Params.latestpostcount (where .Pages "Section" "talk")).GroupByDate "Jan, 2006" "desc" }}
-                                        <li class="groupby">{{ .Key }}</li>
+                                        {{ if (not (eq .Key "Jan, 0001")) }}
+                                            <li class="groupby">{{ .Key }}</li>
+                                        {{ end }}
                                         {{ range sort .Pages "Date" "desc" }}
-                                            {{ partial "list" . }}
+                                            {{ if in .Dir "past" }}
+                                                {{ partial "talk-history-list" . }}
+                                            {{ end }}
                                         {{ end }}
                                     {{ end }}
                                 </ul>

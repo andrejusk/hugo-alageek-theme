@@ -310,6 +310,10 @@ a:hover {
         margin-left: 0;
         margin-right: 0;
     }
+
+    .section-list-item {
+        margin-left: 0 !important;
+    }
     
 }
 
@@ -411,6 +415,16 @@ a:hover {
 
 .citation {
     margin-top: 1rem;
+}
+
+.section-list-item {
+    margin-left: 1.5rem;
+}
+
+.section-list-item .meta,
+.section-list-item.meta {
+    margin-left: 0.25rem;
+    margin-right: 0;
 }
 
 
