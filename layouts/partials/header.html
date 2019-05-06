@@ -1,78 +1,60 @@
 <div class="my-4 my-md-5 header">
-        <div class="container">
-            <div class="row">
+    <div class="container">
 
-                <!-- Logo -->
+        <!-- Profile row -->
 
-                <div class="col-auto offset-md-1 d-none d-md-block">
-                    {{ if .Site.Params.logofile }}
-                        <a href="{{ .Site.BaseURL }}">
-                            <img class="ml-md-4 logo" src="{{ .Site.Params.logofile | absURL }}" alt="logo">
-                        </a>
-                    {{ end }}
-                </div>
+        <div class="row">
 
-                <!-- Header -->
-
-                <div class="col-auto align-self-center mr-auto">
+            <!-- Logo -->
+            
+            <div class="col-auto offset-md-1 d-none d-md-block">
+                {{ if .Site.Params.logofile }}
                     <a href="{{ .Site.BaseURL }}">
-                        <h1 class="font-weight-bold name">{{ .Site.Title }}</h1>
-                        <h2 class="subname">{{ .Site.Params.subtitle }}</h1>
+                        <img class="ml-md-4 logo" src="{{ .Site.Params.logofile | absURL }}" alt="logo">
                     </a>
-    
-                    <!-- Primary navbar -->
+                {{ end }}
+            </div>
 
-                    <ul class="nav nav-primary">
+            <!-- Header -->
 
-                        <!-- Links -->
+            <div class="col-auto align-self-center mr-auto">
+                <a href="{{ .Site.BaseURL }}">
+                    <h1 class="font-weight-bold name">{{ .Site.Title }}</h1>
+                    <h2 class="subname">{{ .Site.Params.subtitle }}</h1>
+                </a>
 
-                        {{ range .Site.Menus.primary.ByWeight }}
-                            <li class="nav-item">
-                                <a class='
-                                text-uppercase 
-                                {{ if or ($.IsMenuCurrent "primary" .) ($.HasMenuCurrent "primary" .) }} nav-active {{ end }}
-                                nav-upper nav-link
-                                {{ if .Identifier }} text-{{ .Identifier }}{{ end }}'
-                                href="{{ .URL }}">
-                                    {{ .Pre }}
-                                    {{ .Name }}
-                                </a>
-                            </li>
-                        {{ end }}
+                <!-- Links -->
 
-                        <!-- Translations -->
-    
-                        {{ if .IsTranslated }}
-                            <li class="ml-3">
-                                <ul class="nav nav-languages">
-                                    {{ range .Translations }}
-                                        <li>
-                                            <a class="nav-link" href="{{ .Permalink }}">
-                                                <strong>{{ upper .Language }}</strong>
-                                            </a>
-                                        </li>
-                                    {{ end }}
-                                </ul>
-                            </li>
-                        {{ end }}
+                <ul class="nav nav-primary">
+                    {{ range .Site.Menus.primary.ByWeight }}
+                        <li class="nav-item">
+                            <!-- nav-active if in section -->
+                            <a class='text-uppercase {{ if or ($.IsMenuCurrent "primary" .) ($.HasMenuCurrent "primary" .) }} nav-active {{ end }} nav-upper nav-link {{ if .Identifier }} text-{{ .Identifier }}{{ end }}' href="{{ .URL }}">
+                                {{ .Pre }}
+                                {{ .Name }}
+                            </a>
+                        </li>
+                    {{ end }}
 
-                    </ul>
+                </ul>
 
-                    <!-- Social links -->
-    
-                    <ul class="nav nav-secondary">
-                        {{ range .Site.Menus.secondary.ByWeight }}
-                            <li class="nav-item">
-                                <a class="text-uppercase nav-lower nav-link{{ if .Identifier }} text-{{ .Identifier }}{{ end }}" href="{{ .URL }}">
-                                    {{ .Pre }}
-                                    {{ .Name }}
-                                </a>
-                            </li>
-                        {{ end }}
-                    </ul>
-
-                </div>
             </div>
         </div>
+
+        <!-- Breadcrumbs row -->
+
+            {{ define "breadcrumb" }}
+                {{ with .Parent }}
+                    {{ template "breadcrumb" . }}
+                    <a href="{{ .URL }}">{{ if .IsHome }} $ {{ else }}{{ .Dir }}{{ end }}</a>&nbsp;>&nbsp;
+                {{ end }}
+            {{ end }}
+            {{ if not .IsHome }}
+                <div class="breadcrumb offset-md-1 d-none d-md-block">
+                    {{ template "breadcrumb" . }}
+                    {{ if .IsNode }}{{ .Dir }}{{ else }}{{ .File }}{{ end }}
+                </div>
+            {{ end }}
+
     </div>
-    
+</div>

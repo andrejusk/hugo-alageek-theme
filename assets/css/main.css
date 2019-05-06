@@ -140,6 +140,11 @@ a:hover {
     color: #0077b5 !important;
 }
 
+.breadcrumb {
+    margin-top: 2rem !important;
+    background-color: #fff !important;
+}
+
 
 
 /* 
@@ -436,7 +441,8 @@ h1,
 .posts,
 .footer,
 .nav-active,
-.text-behind-the-scenes {
+.text-behind-the-scenes,
+.breadcrumb {
     opacity: 0;
     transition: opacity 0.075s ease-out;
 }
@@ -449,6 +455,7 @@ h1,
 .wf-raleway-n4-active .meta,
 /* Navigation */
 .wf-active .nav-upper,
+.wf-active .breadcrumb,
 /* Social */
 .wf-raleway-n4-active .nav-lower {
     opacity: 1;
