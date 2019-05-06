@@ -5,14 +5,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-10">
-                    <div class="markdown">
-                        <h1>{{ i18n "posts_about" . }}</h1>
-                        <ul>
-                            {{ range .Data.Pages.ByPublishDate }}
+                    <div class="page-heading">{{ i18n "posts_about" . }}</div>
+                        <ul class="px-0">
+                        {{ range (first .Site.Params.latestpostcount (where .Pages "Section" "blog")).GroupByDate "Jan, 2006" "desc" }}
+                            <li class="groupby">{{ .Key }}</li>
+                            {{ range sort .Pages "Date" "desc" }}
                                 {{ partial "list" . }}
                             {{ end }}
-                        </ul>
-                    </div>
+                        {{ end }}
+                    </ul>
                 </div>
             </div>
         </div>

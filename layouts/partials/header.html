@@ -1,55 +1,78 @@
 <div class="my-4 my-md-5 header">
-    <div class="container">
-        <div class="row">
-            <div class="col-auto offset-md-1 d-none d-md-block">
-                {{ if .Site.Params.logofile }}
+        <div class="container">
+            <div class="row">
+
+                <!-- Logo -->
+
+                <div class="col-auto offset-md-1 d-none d-md-block">
+                    {{ if .Site.Params.logofile }}
+                        <a href="{{ .Site.BaseURL }}">
+                            <img class="ml-md-4 logo" src="{{ .Site.Params.logofile | absURL }}" alt="logo">
+                        </a>
+                    {{ end }}
+                </div>
+
+                <!-- Header -->
+
+                <div class="col-auto align-self-center mr-auto">
                     <a href="{{ .Site.BaseURL }}">
-                        <img class="logo" src="{{ .Site.Params.logofile | absURL }}" alt="logo">
+                        <h1 class="font-weight-bold name">{{ .Site.Title }}</h1>
+                        <h2 class="subname">{{ .Site.Params.subtitle }}</h1>
                     </a>
-                {{ end }}
-            </div>
-            <div class="col-auto align-self-center mr-auto">
-                <a href="{{ .Site.BaseURL }}">
-                    <h1 class="font-weight-bold name">{{ .Site.Title }}</h1>
-                </a>
+    
+                    <!-- Primary navbar -->
 
-                <ul class="nav nav-primary">
-                    {{ range .Site.Menus.primary.ByWeight }}
-                        <li class="nav-item">
-                            <a class="text-uppercase nav-link{{ if .Identifier }} text-{{ .Identifier }}{{ end }}" href="{{ .URL }}">
-                                {{ .Pre }}
-                                {{ .Name }}
-                            </a>
-                        </li>
-                    {{ end }}
+                    <ul class="nav nav-primary">
 
-                    {{ if .IsTranslated }}
-                        <li class="ml-3">
-                            <ul class="nav nav-languages">
-                                {{ range .Translations }}
-                                    <li>
-                                        <a class="nav-link" href="{{ .Permalink }}" alt="{{ .Language.LanguageName }}" title="{{ .Language.LanguageName }}">
-                                            <strong class="d-none d-md-inline">{{ upper .Language.LanguageName }}</strong>
-                                            <strong class="d-visible d-sm-none">{{ upper .Language }}</strong>
-                                        </a>
-                                    </li>
-                                {{ end }}
-                            </ul>
-                        </li>
-                    {{ end }}
-                </ul>
+                        <!-- Links -->
 
-                <ul class="nav nav-secondary">
-                    {{ range .Site.Menus.secondary.ByWeight }}
-                        <li class="nav-item">
-                            <a class="text-uppercase font-weight-bold nav-link{{ if .Identifier }} text-{{ .Identifier }}{{ end }}" href="{{ .URL }}">
-                                {{ .Pre }}
-                                {{ .Name }}
-                            </a>
-                        </li>
-                    {{ end }}
-                </ul>
+                        {{ range .Site.Menus.primary.ByWeight }}
+                            <li class="nav-item">
+                                <a class='
+                                text-uppercase 
+                                {{ if or ($.IsMenuCurrent "primary" .) ($.HasMenuCurrent "primary" .) }} nav-active {{ end }}
+                                nav-upper nav-link
+                                {{ if .Identifier }} text-{{ .Identifier }}{{ end }}'
+                                href="{{ .URL }}">
+                                    {{ .Pre }}
+                                    {{ .Name }}
+                                </a>
+                            </li>
+                        {{ end }}
+
+                        <!-- Translations -->
+    
+                        {{ if .IsTranslated }}
+                            <li class="ml-3">
+                                <ul class="nav nav-languages">
+                                    {{ range .Translations }}
+                                        <li>
+                                            <a class="nav-link" href="{{ .Permalink }}">
+                                                <strong>{{ upper .Language }}</strong>
+                                            </a>
+                                        </li>
+                                    {{ end }}
+                                </ul>
+                            </li>
+                        {{ end }}
+
+                    </ul>
+
+                    <!-- Social links -->
+    
+                    <ul class="nav nav-secondary">
+                        {{ range .Site.Menus.secondary.ByWeight }}
+                            <li class="nav-item">
+                                <a class="text-uppercase nav-lower nav-link{{ if .Identifier }} text-{{ .Identifier }}{{ end }}" href="{{ .URL }}">
+                                    {{ .Pre }}
+                                    {{ .Name }}
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
+    
