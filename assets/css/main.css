@@ -172,6 +172,10 @@ a:hover {
     color: #666666;
 }
 
+.article .meta {
+    margin-bottom: 4rem !important;
+}
+
 .content .meta a {
     text-decoration: none;
 }
@@ -209,7 +213,12 @@ a:hover {
 }
 
 .cta {
+    padding: 1.5rem 0 1.5rem 0;
     border-top: 1px solid rgba(0,0,0,.1)
+}
+
+.next.cta {
+    padding: 0 0 0 0;
 }
 
 .markdown p {
@@ -377,6 +386,24 @@ a:hover {
     height: 16px;
 }
 
+.share-buttons > div {
+    position: relative;
+    float: left; 
+}
+.share-buttons { 
+    display: inline-block; 
+    vertical-align: middle;
+}
+.share-buttons > div:hover { cursor: pointer; }
+.share-buttons img {
+    margin-right: 1rem;
+    height: 24px;
+    width: 24px;
+}
+
+.citation {
+    margin-top: 1rem;
+}
 
 
 /* 

@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ partial "header" . }}
 
-    <div class="content">
+    <div class="article content">
         <div class="container">
 
             <!-- Article -->
@@ -12,47 +12,7 @@
 
                 <div class="col-sm-12 col-md-9">
 
-                    <!-- Title -->
-
-                    <h1 class="mx-0 mx-md-4">{{ .Title }}</h1>
-
-                    <!-- Subheadings -->
-                    
-                    <div class="mb-4 mb-md-5 meta">
-
-                        <!-- Time published -->
-
-                        <span class="date" title='{{ .Date.Format "Mon Jan 2 2006 15:04:05 MST" }}'>
-                            {{ .Date.Format  "Published Jan 2, 2006" }}
-                        </span>
-
-                        <!-- Author -->
-
-                        {{ if .Params.Author }}
-                            <span class="author middot" title="{{ .Params.Author }}">
-                                {{ .Params.Author }}
-                            </span>
-                        {{ end }}
-
-                        <!-- Estimated reading time -->
-
-                        <span class="reading-time middot">
-                            {{ i18n "reading_time" .ReadingTime }}
-                        </span>
-
-                        <!-- Tags -->
-
-                        <div class="d-none d-md-inline tags">
-                            <ul class="list-unstyled d-inline">
-                                {{ range .Params.tags }}
-                                    <li class="d-inline middot">
-                                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-                                    </li>
-                                {{ end }}
-                            </ul>
-                        </div>
-
-                    </div>
+                    {{ partial "single-meta" . }}
 
                 </div>
 
@@ -61,49 +21,50 @@
                 <div class="col-sm-12 col-md-9">
 
                     <div class="markdown">
+
                         {{ partial "content" . }}
+
                     </div>
 
                 </div>
 
             </div>
 
-            <!-- Call to Action -->
+            <!-- Call to Actions -->
 
             <div class="cta row justify-content-center">
 
-                <!-- Next/previous post -->
+                <div class="col-sm-12 col-md-9">
 
-                <div class="col-sm-12 col-md-12">
-                    
-                    {{ if .Site.Params.posts_navigation }}
-                        <div class="navigation">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    {{ if .PrevInSection }}
-                                        <div class="mx-0 mx-md-4 mt-4 text-left">
-                                            <img class="icon" src="/img/back.svg" alt="back" />
-                                            <a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a>
-                                        </div>
-                                    {{ end }}
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    {{ if .NextInSection }}
-                                        <div class="mx-0 mx-md-4 mt-4 text-right">
-                                            <a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a>
-                                            <img class="icon" src="/img/next.svg" alt="next" />
-                                        </div>
-                                    {{ end }}
-                                </div>
-                            </div>
-                        </div>
-                    {{ end }}
+                    <!-- Share -->
+
+                    {{ partial "single-share" . }}
+
+                    <!-- Cite -->
+
+                    {{ partial "single-cite" . }}
 
                 </div>
             </div>
+
+            <!-- Next/previous post -->
+            
+            {{ if .Site.Params.posts_navigation }}
+
+                <div class="next cta row justify-content-center">
+
+                    <div class="col-sm-12 col-md-9">
+                    
+                    {{ partial "single-section-nav" . }}
+                    
+                    </div>
+                </div>
+                
+            {{ end }}
 
         </div>
     </div>
 
     {{ partial "footer" . }}
+    
 {{ end }}

@@ -1,0 +1,20 @@
+<div class="navigation">
+    {{ if .PrevInSection }}
+        <div class="mx-0 mx-md-4 mt-4 text-left">
+            <a href="{{ .PrevInSection.Permalink }}">
+                <img class="icon" src="/img/back.svg" alt="back" /> Previous <br>
+                {{ .PrevInSection.File }}
+            </a>
+        </div>
+    {{ end }}
+</div>
+<div class="navigation">
+    {{ if .NextInSection }}
+        <div class="mx-0 mx-md-4 mt-4 text-right">
+            <a href="{{ .NextInSection.Permalink }}">
+                Newer <img class="icon" src="/img/next.svg" alt="next" /> <br>
+                {{ .NextInSection.File }}                                                
+            </a>
+        </div>
+    {{ end }}
+</div>
