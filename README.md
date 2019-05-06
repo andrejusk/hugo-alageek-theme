@@ -1,22 +1,14 @@
-![](https://alageek.com/img/alageek-logo.png)
+# hugo-ψ-theme
+Based on [hugo-alageek-theme](https://github.com/gkmngrgn/hugo-alageek-theme), 
+which is based on [Cocoa Enhaced](https://github.com/mtn/cocoa-eh-hugo-theme),
+which was based on [Cocoa](https://github.com/nishanths/cocoa-hugo-theme). 
 
-# hugo-alageek-theme
-A [Cocoa Enhaced](https://github.com/mtn/cocoa-eh-hugo-theme) based theme. It's rewritten with **Bootstrap 4**.
+This version optimises layout for a personal portfolio website
+and makes optimisations for Lighthouse audits.
 
-<a href="https://www.patreon.com/gkmngrgn" title="Donate to this project using Patreon">
-    <img src="https://img.shields.io/badge/become%20a%20patron-F96854.svg?longCache=true&style=for-the-badge"
-         alt="Patreon donate button" />
-</a>
+Websites that are using hugo with psi theme:
 
-<a href="https://www.buymeacoffee.com/gokmen" title="Buy me a coffee!">
-    <img src="https://img.shields.io/badge/buy%20me%20a%20coffee-%23FF813F.svg?longCache=true&style=for-the-badge"
-         alt="BMC donate button" />
-</a>
-
-Websites that are using hugo with alaGeek theme:
-
-* https://alageek.com
-* https://gokmengorgen.net
+* https://andrejus.uk
 
 ## Features
 
@@ -30,15 +22,6 @@ Websites that are using hugo with alaGeek theme:
 * LaTeX support with MathJax.
 * Possibility to add extra scripts with `footer_extra.html`.
 * Disqus support.
-
-## Supported Languages
-
-* English (Default)
-* Turkish
-
-## TODO
-
-* Printer friendly output
 
 ## Dependency versions
 

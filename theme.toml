@@ -1,17 +1,18 @@
-name = "alaGeek"
+name = "psi"
 license = "MIT"
-licenselink = "https://github.com/gkmngrgn/hugo-alageek-theme/blob/master/LICENSE.md"
-description = "alaGeek website specific theme."
-homepage = "https://alageek.com"
-tags = ["clean", "fast", "responsive", "typography"]
+licenselink = "https://github.com/andrejusk/hugo-psi-theme/blob/master/LICENSE.md"
+description = "andrejus.uk website specific theme"
+homepage = "https://andrejus.uk"
+tags = ["clean", "fast", "responsive", "typography", "minimalistic"]
 features = ["flexible", "fast", "highlights", "progressive images"]
-min_version = 0.40.3
+min_version = 0.40
 
 [author]
-  name = "Gökmen Görgen"
-  homepage = "https://gokmengorgen.net"
+  name = "Andrejus Kostarevas"
+  homepage = "https://andrejus.uk"
+  repo = "https://github.com/andrejusk/hugo-psi-theme"
 
 [original]
-    name = "Alexis Tacnet"
-    homepage = "https://fuegowolf.me/"
-    repo = "https://github.com/fuegowolf/cocoa-eh-hugo-theme"
+    name = "Gökmen Görgen"
+    homepage = "https://gokmengorgen.net"
+    repo = "https://github.com/gkmngrgn/hugo-alageek-theme"
