@@ -201,11 +201,19 @@ a:hover {
 
 .content .markdown {
     font-family: "Merriweather";
-    font-size: 1.2rem;
-    line-height: 2.1em;
+    font-size: 1.25em;
+    line-height: 1.82em; /* 1.45x font-size */
     color: #313537;
     padding-bottom: 0rem;
     margin-bottom: 1rem;
+}
+
+.cta {
+    border-top: 1px solid rgba(0,0,0,.1)
+}
+
+.markdown p {
+    margin-bottom: 1em;
 }
 
 .markdown h2 {
@@ -226,7 +234,7 @@ a:hover {
 @media (min-width: 1023.98px) {
 
     .content .markdown {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 
     .markdown h2 {

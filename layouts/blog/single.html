@@ -3,26 +3,44 @@
 
     <div class="content">
         <div class="container">
+
+            <!-- Article -->
+
             <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-10">
+
+                <!-- Meta infromation -->
+
+                <div class="col-sm-12 col-md-9">
+
+                    <!-- Title -->
+
                     <h1 class="mx-0 mx-md-4">{{ .Title }}</h1>
 
+                    <!-- Subheadings -->
+                    
                     <div class="mb-4 mb-md-5 meta">
+
+                        <!-- Time published -->
+
                         <span class="date" title='{{ .Date.Format "Mon Jan 2 2006 15:04:05 MST" }}'>
-                            {{ .Date.Format  "January 02, 2006" }}
+                            {{ .Date.Format  "Published Jan 2, 2006" }}
                         </span>
 
-                        {{ if not .Params.noauthor }}
-                            {{ if .Params.author }}
-                                <span class="author middot" title="{{ .Params.Author }}">
-                                    {{ .Params.author }}
-                                </span>
-                            {{ end }}
+                        <!-- Author -->
+
+                        {{ if .Params.Author }}
+                            <span class="author middot" title="{{ .Params.Author }}">
+                                {{ .Params.Author }}
+                            </span>
                         {{ end }}
+
+                        <!-- Estimated reading time -->
 
                         <span class="reading-time middot">
                             {{ i18n "reading_time" .ReadingTime }}
                         </span>
+
+                        <!-- Tags -->
 
                         <div class="d-none d-md-inline tags">
                             <ul class="list-unstyled d-inline">
@@ -34,30 +52,30 @@
                             </ul>
                         </div>
 
-                        <div class="d-none d-md-inline tags">
-                            <ul class="list-unstyled d-inline">
-                                {{ if isset .Params "hacker_news_id" }}
-                                    {{ if ne .Params.hacker_news_id "" }}
-                                        <li class="d-inline middot">
-                                            <a href="https://news.ycombinator.com/item?id={{ .Params.hacker_news_id }}">Hacker News</a>
-                                        </li>
-                                    {{ end }}
-                                {{ end }}
-                                {{ if isset .Params "lobsters_id" }}
-                                    {{ if ne .Params.lobsters_id "" }}
-                                        <li class="d-inline middot">
-                                            <a href="https://lobste.rs/s/{{ .Params.lobsters_id }}">Lobsters</a>
-                                        </li>
-                                    {{ end }}
-                                {{ end }}
-                            </ul>
-                        </div>
                     </div>
+
+                </div>
+
+                <!-- Content -->
+
+                <div class="col-sm-12 col-md-9">
 
                     <div class="markdown">
                         {{ partial "content" . }}
                     </div>
 
+                </div>
+
+            </div>
+
+            <!-- Call to Action -->
+
+            <div class="cta row justify-content-center">
+
+                <!-- Next/previous post -->
+
+                <div class="col-sm-12 col-md-12">
+                    
                     {{ if .Site.Params.posts_navigation }}
                         <div class="navigation">
                             <div class="row">
@@ -81,13 +99,9 @@
                         </div>
                     {{ end }}
 
-                    {{ if .Site.DisqusShortname }}
-                        <div class="mt-5 mx-0 mx-md-4 disqus">
-                            {{ template "_internal/disqus.html" . }}
-                        </div>
-                    {{ end }}
                 </div>
             </div>
+
         </div>
     </div>
 

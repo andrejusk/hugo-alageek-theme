@@ -9,7 +9,7 @@
                         {{ partial "content" . }}
                     </div>
                     <div class="mx-0 mx-md-4 posts">
-                        <h1>{{ i18n "talks" }}</h1>
+                        <div class="page-heading">{{ i18n "talks" }}</div>
                         <ul class="list-unstyled">
                             {{ range .Data.Pages.GroupByDate "Jan, 2006" "desc"}}
                                 <li class="groupby">{{ .Key }}</li>
