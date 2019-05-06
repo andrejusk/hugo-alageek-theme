@@ -1,6 +1,9 @@
 The MIT License (MIT)
 
-Copyright (c) 2018 Gökmen Görgen
+Copyright for portions of project hugo-psi-theme are held by Gökmen Görgen, 2018 
+as part of [hugo-alageek-theme](https://github.com/gkmngrgn/hugo-alageek-theme) 
+
+All other copyright for hugo-psi-theme are held by Andrejus Kostarevas, 2019.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
