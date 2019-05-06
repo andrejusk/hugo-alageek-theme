@@ -9,6 +9,10 @@
   |___/                       
 
  */
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
 body {
     font-family: 
         "Raleway", -apple-system, BlinkMacSystemFont,
@@ -20,8 +24,10 @@ body {
 
 a,
 .footer a,
-.content a {
-    color: #2196f3;
+.content a,
+.breadcrumb a {
+    color: #0066CC;
+    text-decoration: none !important;
 }
 
 a:hover {
@@ -204,7 +210,8 @@ a:hover {
 }
 
 .content .markdown {
-    font-family: "Merriweather";
+    font-family: "Merriweather", 
+        Georgia, 'Times New Roman', Times, serif;
     font-size: 1.25em;
     line-height: 1.82em; /* 1.45x font-size */
     color: #313537;
@@ -225,39 +232,40 @@ a:hover {
     margin-bottom: 1em;
 }
 
+/* Markdown headings */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+    text-transform: uppercase;
+    font-family: "Merriweather Heavy", "Merriweather", 
+        Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Don't drop first paragraph */
+.markdown h2:first-child {
+    margin-top: 0rem;
+}
+
 .markdown h2 {
-    margin-top: 2rem;
+    letter-spacing: 0.12em;
+    font-size: 1.1em;
+    margin-top: 4rem;
     margin-bottom: 1rem;
 }
 
 .markdown h3 {
-    margin-top: 1rem;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    margin-top: 2rem;
     margin-bottom: 0.75rem;
 }
 
 .markdown h4 {
+    letter-spacing: 0.05em;
+    font-size: 1em;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-}
-
-@media (min-width: 1023.98px) {
-
-    .content .markdown {
-        font-size: 1.25rem;
-    }
-
-    .markdown h2 {
-        font-size: 1.6em;
-    }
-    
-    .markdown h3 {
-        font-size: 1.4em;
-    }
-    
-    .markdown h4 {
-        font-size: 1.3em;
-    }
-
 }
 
 .content twitterwidget {
@@ -422,7 +430,7 @@ a:hover {
 
 .footer a {
     font-size: 14px;
-    opacity: 0.6;
+    opacity: 0.9;
     display: inline-block;
     transition: opacity 0.1s cubic-bezier(0.47, 0, 0.75, 0.72);
     -webkit-transition: opacity 0.1s cubic-bezier(0.47, 0, 0.75, 0.72);
