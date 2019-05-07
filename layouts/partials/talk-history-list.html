@@ -7,10 +7,8 @@
         </a> 
     {{ end }}
 
-    <!--
-    {{ if .Params.web }}<a href="{{ .Params.web }}"><span class="middot">website</span></a>{{ end }}
-    {{ if .Params.video }}<a href="{{ .Params.video }}"><span class="middot">video</span></a>{{ end }}
-    {{ if .Params.slides }}<a href="{{ .Params.slides }}"><span class="middot">slides</span></a>{{ end }}
-    -->
+    {{ if .Params.web }}<a class="d-md-block d-none" href="{{ .Params.web }}"><span class="middot">website</span></a>{{ end }}
+    {{ if .Params.video }}<a class="d-md-block d-none"  href="{{ .Params.video }}"><span class="middot">video</span></a>{{ end }}
+    {{ if .Params.slides }}<a class="d-md-block d-none" href="{{ .Params.slides }}"><span class="middot">slides</span></a>{{ end }}
 
 </li>
