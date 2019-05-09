@@ -2,7 +2,7 @@
     {{ if .PrevInSection }}
         <div class="mx-0 mx-md-4 mt-4 text-left">
             <a href="{{ .PrevInSection.Permalink }}">
-                <img class="icon" src="/img/back.svg" alt="back" /> Previous <br>
+                    {{ readFile "themes/hugo-psi-theme/static/img/back.svg" | safeHTML }} Previous <br>
                 {{ .PrevInSection.File }}
             </a>
         </div>
@@ -12,7 +12,7 @@
     {{ if .NextInSection }}
         <div class="mx-0 mx-md-4 mt-4 text-right">
             <a href="{{ .NextInSection.Permalink }}">
-                Newer <img class="icon" src="/img/next.svg" alt="next" /> <br>
+                Newer {{ readFile "themes/hugo-psi-theme/static/img/next.svg" | safeHTML }} <br>
                 {{ .NextInSection.File }}                                                
             </a>
         </div>

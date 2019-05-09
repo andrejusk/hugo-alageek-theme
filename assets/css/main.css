@@ -59,7 +59,8 @@ a:hover {
     text-decoration: none;
 }
 
-.header .logo {
+.header .logo,
+.logo svg {
     width: 120px;
     max-height: 120px;
 }
@@ -393,7 +394,8 @@ a:hover {
     min-width: 100px;
 }
 
-.content .navigation .icon {
+.content .navigation .icon,
+.content .navigation .icon svg {
     width: 16px;
     height: 16px;
 }
@@ -466,7 +468,8 @@ a:hover {
     opacity: 0.8;
 }
 
-.footer a .icon {
+.footer a .icon,
+.footer a svg {
     width: 16px;
     height: 16px;
 }
