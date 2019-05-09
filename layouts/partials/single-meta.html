@@ -8,9 +8,15 @@
 
     <!-- Time published -->
 
+    {{ if .Params.Author }}
     <span class="date" title='{{ .Date.Format "Mon Jan 2 2006 15:04:05 MST" }}'>
         {{ .Date.Format  "Published Jan 2, 2006" }}
     </span>
+    {{ else }}
+    <span class="date" title='{{ .Date.Format "Mon Jan 2 2006 15:04:05 MST" }}'>
+        {{ .Lastmod.Format  "Last updated Jan 2, 2006" }}
+    </span>    
+    {{ end }}
 
     <!-- Author -->
 
@@ -23,7 +29,7 @@
     <!-- Estimated reading time -->
 
     <span class="reading-time middot">
-        {{ i18n "reading_time" .ReadingTime }}
+        {{ i18n "reading_time" .ReadingTime }} read
     </span>
 
     <!-- Tags -->
