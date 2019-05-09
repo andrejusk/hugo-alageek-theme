@@ -134,19 +134,6 @@ a:hover {
 
 }
 
-.text-github {
-    font-weight: 300;
-    color: #211f1f !important;
-}
-
-.text-twitter {
-    color: #00aced !important;
-}
-
-.text-linkedin {
-    color: #0077b5 !important;
-}
-
 .breadcrumb {
     margin-top: 2rem !important;
     background-color: #fff !important;
@@ -395,7 +382,7 @@ a:hover {
 }
 
 .content .navigation .icon,
-.content .navigation .icon svg {
+.content .navigation svg {
     width: 16px;
     height: 16px;
 }
@@ -409,8 +396,9 @@ a:hover {
     vertical-align: middle;
 }
 .share-buttons > div:hover { cursor: pointer; }
-.share-buttons img {
-    margin-right: 1rem;
+.share-buttons img,
+.share-buttons svg {
+    margin-left: 0.66rem;
     height: 24px;
     width: 24px;
 }
@@ -539,4 +527,68 @@ h1,
 .wf-active .posts,
 .wf-active .footer {
     opacity: 1;
+}
+
+/* 
+
+dark
+
+*/
+
+/* Primary black */
+.dark body,
+.dark .breadcrumb {
+    background-color: #000 !important;
+}
+
+.dark a {
+    color: #ff1744;
+}
+.dark a:hover {
+    color: #ff8a80;
+}
+
+.dark path {
+    fill: #EEEEEE !important;
+}
+.dark #f {
+    fill: #000 !important;
+}
+
+.dark body,
+.dark .name,
+.dark .content,
+.dark .markdown,
+.dark .page-heading {
+    color: #EEEEEE !important;
+}
+
+.dark .subname,
+.dark .nav-upper,
+.dark .meta,
+.dark .see-more,
+.dark .content .markdown blockquote,
+.dark .content .tags a {
+    color: #BDBDBD !important;
+}
+
+.dark .footer path {
+    fill: #BDBDBD;
+}
+
+.dark .content .markdown blockquote {
+    color: #BDBDBD;
+    border-left: 0.25rem solid #1A1A1A;
+}
+
+
+.dark hr,
+.dark .footer .row,
+.dark .cta {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+.dark .header .row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
