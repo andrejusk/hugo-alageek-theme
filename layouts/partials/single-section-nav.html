@@ -1,6 +1,6 @@
 <div class="navigation">
     {{ if .PrevInSection }}
-        <div class="mx-0 mx-md-4 mt-4 text-left">
+        <div class="text-left">
             <a href="{{ .PrevInSection.Permalink }}">
                     {{ readFile "themes/hugo-psi-theme/static/img/back.svg" | safeHTML }} Previous <br>
                 {{ .PrevInSection.File }}
@@ -10,7 +10,7 @@
 </div>
 <div class="navigation">
     {{ if .NextInSection }}
-        <div class="mx-0 mx-md-4 mt-4 text-right">
+        <div class="text-right">
             <a href="{{ .NextInSection.Permalink }}">
                 Newer {{ readFile "themes/hugo-psi-theme/static/img/next.svg" | safeHTML }} <br>
                 {{ .NextInSection.File }}                                                
