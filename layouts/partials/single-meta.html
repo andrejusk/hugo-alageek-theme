@@ -29,8 +29,12 @@
     <!-- Estimated reading time -->
 
     <span class="reading-time middot">
-        {{ i18n "reading_time" .ReadingTime }} read
-    </span>
+    {{ if .Params.Time }}
+        &Tilde; {{ .Params.Time }}
+    {{ else }}
+        &Tilde; {{ i18n "reading_time" .ReadingTime }}
+    {{ end }}
+</span>
 
     <!-- Tags -->
 
