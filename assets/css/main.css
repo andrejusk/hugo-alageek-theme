@@ -538,18 +538,29 @@ dark
 /* Primary black */
 .dark body,
 .dark .breadcrumb {
-    background-color: #000 !important;
+    background-color: #121212 !important;
+}
+
+.dark .highlight pre {
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 .dark a {
-    color: #ff1744;
+    color: #42A5F5;
+}
+.dark .footer a {
+    color: rgba(66, 165, 245, 0.87);
 }
 .dark a:hover {
-    color: #ff8a80;
+    color: #90CAF9;
 }
 
 .dark path {
-    fill: #EEEEEE !important;
+    fill: rgba(255, 255, 255, .87) !important;
+}
+.dark .footer {
+    fill: rgba(255, 255, 255, .60) !important;
 }
 .dark #f {
     fill: #000 !important;
@@ -559,8 +570,9 @@ dark
 .dark .name,
 .dark .content,
 .dark .markdown,
-.dark .page-heading {
-    color: #EEEEEE !important;
+.dark .page-heading,
+.dark a.nav-active {
+    color: rgba(255, 255, 255, .87) !important;
 }
 
 .dark .subname,
@@ -569,11 +581,11 @@ dark
 .dark .see-more,
 .dark .content .markdown blockquote,
 .dark .content .tags a {
-    color: #BDBDBD !important;
+    color: rgba(255, 255, 255, .60) !important;
 }
 
 .dark .footer path {
-    fill: #BDBDBD;
+    color: rgba(255, 255, 255, .60) !important;
 }
 
 .dark .content .markdown blockquote {
