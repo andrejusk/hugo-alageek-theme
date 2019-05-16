@@ -3,7 +3,7 @@
         <div class="text-left">
             <a href="{{ .PrevInSection.Permalink }}">
                     {{ readFile "themes/hugo-psi-theme/static/img/back.svg" | safeHTML }} Previous <br>
-                {{ .PrevInSection.File }}
+                {{ .PrevInSection.File.TranslationBaseName }}
             </a>
         </div>
     {{ end }}
@@ -13,7 +13,7 @@
         <div class="text-right">
             <a href="{{ .NextInSection.Permalink }}">
                 Newer {{ readFile "themes/hugo-psi-theme/static/img/next.svg" | safeHTML }} <br>
-                {{ .NextInSection.File }}                                                
+                {{ .NextInSection.File.TranslationBaseName }}                                                
             </a>
         </div>
     {{ end }}
