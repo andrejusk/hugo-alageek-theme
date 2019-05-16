@@ -9,8 +9,8 @@
             
             <div class="col-auto offset-md-1 d-none d-md-block">
                 {{ if .Site.Params.logofile }}
-                    <a href="{{ .Site.BaseURL }}/">
-                        <img class="ml-md-4 logo" src="{{ .Site.Params.logofile | absURL }}" alt="logo">
+                    <a class="ml-md-4 logo" href="{{ .Site.BaseURL }}" alt="logo">
+                        {{ readFile .Site.Params.logofile | safeHTML }}
                     </a>
                 {{ end }}
             </div>
@@ -52,7 +52,7 @@
             {{ if not .IsHome }}
                 <div class="breadcrumb offset-md-1 d-none d-md-block">
                     {{ template "breadcrumb" . }}
-                    {{ if .IsNode }}{{ .Dir }}{{ else }}{{ .File }}{{ end }}
+                    {{ if .IsNode }}{{ .Dir }}{{ else }}{{ .File.TranslationBaseName }}{{ end }}
                 </div>
             {{ end }}
 

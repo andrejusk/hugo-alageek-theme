@@ -1,6 +1,9 @@
 <div class="citation">
 
     <p>
+
+        <strong>{{ i18n "cite" }} </strong>
+        
         [x]
         {{ substr .Params.Author 0 1 }}.
         {{ index (split .Params.Author " ") 1 }},
@@ -9,7 +12,7 @@
         [Online].
         Available:
         <a href="https:{{ .Permalink }}">https:{{ .Permalink }}</a>.
-        [Accessed: {{ .Lastmod.Format "02-Jan-2006" }}]
+        [Accessed: dd-MMM-yyyy]
     </p>
 
 </div>

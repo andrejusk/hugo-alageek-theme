@@ -59,7 +59,8 @@ a:hover {
     text-decoration: none;
 }
 
-.header .logo {
+.header .logo,
+.logo svg {
     width: 120px;
     max-height: 120px;
 }
@@ -131,19 +132,6 @@ a:hover {
         margin-right: 0.50rem;
     }
 
-}
-
-.text-github {
-    font-weight: 300;
-    color: #211f1f !important;
-}
-
-.text-twitter {
-    color: #00aced !important;
-}
-
-.text-linkedin {
-    color: #0077b5 !important;
 }
 
 .breadcrumb {
@@ -393,7 +381,8 @@ a:hover {
     min-width: 100px;
 }
 
-.content .navigation .icon {
+.content .navigation .icon,
+.content .navigation svg {
     width: 16px;
     height: 16px;
 }
@@ -407,8 +396,9 @@ a:hover {
     vertical-align: middle;
 }
 .share-buttons > div:hover { cursor: pointer; }
-.share-buttons img {
-    margin-right: 1rem;
+.share-buttons img,
+.share-buttons svg {
+    margin-left: 0.66rem;
     height: 24px;
     width: 24px;
 }
@@ -466,7 +456,8 @@ a:hover {
     opacity: 0.8;
 }
 
-.footer a .icon {
+.footer a .icon,
+.footer a svg {
     width: 16px;
     height: 16px;
 }
@@ -536,4 +527,80 @@ h1,
 .wf-active .posts,
 .wf-active .footer {
     opacity: 1;
+}
+
+/* 
+
+dark
+
+*/
+
+/* Primary black */
+.dark body,
+.dark .breadcrumb {
+    background-color: #121212 !important;
+}
+
+.dark .highlight pre {
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark a {
+    color: #42A5F5;
+}
+.dark .footer a {
+    color: rgba(66, 165, 245, 0.87);
+}
+.dark a:hover {
+    color: #90CAF9;
+}
+
+.dark path {
+    fill: rgba(255, 255, 255, .87) !important;
+}
+.dark .footer {
+    fill: rgba(255, 255, 255, .60) !important;
+}
+.dark #f {
+    fill: #000 !important;
+}
+
+.dark body,
+.dark .name,
+.dark .content,
+.dark .markdown,
+.dark .page-heading,
+.dark a.nav-active {
+    color: rgba(255, 255, 255, .87) !important;
+}
+
+.dark .subname,
+.dark .nav-upper,
+.dark .meta,
+.dark .see-more,
+.dark .content .markdown blockquote,
+.dark .content .tags a {
+    color: rgba(255, 255, 255, .60) !important;
+}
+
+.dark .footer path {
+    color: rgba(255, 255, 255, .60) !important;
+}
+
+.dark .content .markdown blockquote {
+    color: #BDBDBD;
+    border-left: 0.25rem solid #1A1A1A;
+}
+
+
+.dark hr,
+.dark .footer .row,
+.dark .cta {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+.dark .header .row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
