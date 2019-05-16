@@ -52,7 +52,7 @@
             {{ if not .IsHome }}
                 <div class="breadcrumb offset-md-1 d-none d-md-block">
                     {{ template "breadcrumb" . }}
-                    {{ if .IsNode }}{{ .Dir }}{{ else }}{{ .File }}{{ end }}
+                    {{ if .IsNode }}{{ .Dir }}{{ else }}{{ .File.TranslationBaseName }}{{ end }}
                 </div>
             {{ end }}
 
