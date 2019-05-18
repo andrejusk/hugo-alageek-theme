@@ -9,9 +9,19 @@
                         {{ else }}
                             <a href="{{ .Site.BaseURL }}/license">{{ .Site.Params.copyright }}</a>
                         {{ end }}
-                        <a href='https://github.com/{{ .Site.Params.github }}/{{ .Site.Params.repo }}/tree/{{ default "master" (getenv "BRANCH_NAME") }}'>
-                            {{ default "local" (getenv "BRANCH_NAME") }}
-                        </a>
+
+                        {{ $branch := default "local" (default (getenv "BRANCH_NAME") (getenv "BRANCH")) }}
+
+                        {{ if (eq $branch "local") }}
+                            <a href='https://github.com/{{ .Site.Params.github }}/{{ .Site.Params.repo }}/'>
+                                {{ $branch }}
+                            </a>
+                        {{ else if (not (eq $branch "master")) }}
+                            <a href='https://github.com/{{ .Site.Params.github }}/{{ .Site.Params.repo }}/tree/$branch'>
+                                {{ $branch }}
+                            </a>
+                        {{ end }}
+
                         {{ if $.GitInfo }}
                             <a href="https://github.com/{{ .Site.Params.github }}/{{ .Site.Params.repo }}/commit/{{ .GitInfo.Hash }}/"> 
                                 {{ .GitInfo.AbbreviatedHash }}
