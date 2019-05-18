@@ -46,13 +46,13 @@
             {{ define "breadcrumb" }}
                 {{ with .Parent }}
                     {{ template "breadcrumb" . }}
-                    <a href="{{ .URL }}">{{ if .IsHome }} $ {{ else }}{{ .Dir }}{{ end }}</a>&nbsp;>&nbsp;
+                    <a href="{{ .Permalink }}">{{ if .IsHome }} $ {{ else }}{{ .File.Dir }}{{ end }}</a>&nbsp;>&nbsp;
                 {{ end }}
             {{ end }}
             {{ if not .IsHome }}
                 <div class="breadcrumb offset-md-1 d-none d-md-block">
                     {{ template "breadcrumb" . }}
-                    {{ if .IsNode }}{{ .Dir }}{{ else }}{{ .File.TranslationBaseName }}{{ end }}
+                    {{ if .IsNode }}{{ .File.Dir }}{{ else }}{{ .File.TranslationBaseName }}{{ end }}
                 </div>
             {{ end }}
 

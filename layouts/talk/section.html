@@ -23,7 +23,7 @@
                             {{ range .Pages.GroupByParam "topic" }}
                                 <li class="groupby">{{ .Key }}</li>
                                 {{ range .Pages }}
-                                    {{ if not (in .Dir "past") }}
+                                    {{ if not (in .File.Dir "past") }}
                                         {{ partial "talk-proposal-list" . }}
                                     {{ end }}
                                 {{ end }}
@@ -40,7 +40,7 @@
                                     <li class="groupby">{{ .Key }}</li>
                                 {{ end }}
                                 {{ range sort .Pages "Date" "desc" }}
-                                    {{ if in .Dir "past" }}
+                                    {{ if in .File.Dir "past" }}
                                         {{ partial "talk-history-list" . }}
                                     {{ end }}
                                 {{ end }}

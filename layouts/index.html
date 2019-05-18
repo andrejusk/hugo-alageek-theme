@@ -15,7 +15,7 @@
                             <ul>
                                 {{ range .Site.Params.best_posts }}
                                     <li>
-                                        <a href="{{ .url }}">{{ .title }}</a>
+                                        <a href="{{ .Permalink }}">{{ .title }}</a>
                                     </li>
                                 {{ end }}
                             </ul>
@@ -53,7 +53,7 @@
                                             <li class="groupby">{{ .Key }}</li>
                                         {{ end }}
                                         {{ range sort .Pages "Date" "desc" }}
-                                            {{ if in .Dir "past" }}
+                                            {{ if in .File.Dir "past" }}
                                                 {{ partial "talk-history-list" . }}
                                             {{ end }}
                                         {{ end }}
