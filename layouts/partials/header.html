@@ -1,60 +1,13 @@
 <div class="my-4 my-md-5 header">
     <div class="container">
 
-        <!-- Profile row -->
+        <!-- Profile -->
 
-        <div class="row">
-
-            <!-- Logo -->
-            
-            <div class="col-auto offset-md-1 d-none d-md-block">
-                {{ if .Site.Params.logofile }}
-                    <a class="ml-md-4 logo" href="{{ .Site.BaseURL }}" alt="logo">
-                        {{ readFile .Site.Params.logofile | safeHTML }}
-                    </a>
-                {{ end }}
-            </div>
-
-            <!-- Header -->
-
-            <div class="col-auto align-self-center mr-auto">
-                <a href="{{ .Site.BaseURL }}/">
-                    <h1 class="font-weight-bold name">{{ .Site.Title }}</h1>
-                    <h2 class="subname">{{ .Site.Params.subtitle }}</h1>
-                </a>
-
-                <!-- Links -->
-
-                <ul class="nav nav-primary">
-                    {{ range .Site.Menus.primary.ByWeight }}
-                        <li class="nav-item">
-                            <!-- nav-active if in section -->
-                            <a class='text-uppercase {{ if or ($.IsMenuCurrent "primary" .) ($.HasMenuCurrent "primary" .) }} nav-active {{ end }} nav-upper nav-link {{ if .Identifier }} text-{{ .Identifier }}{{ end }}' href="{{ .URL }}">
-                                {{ .Pre }}
-                                {{ .Name }}
-                            </a>
-                        </li>
-                    {{ end }}
-
-                </ul>
-
-            </div>
-        </div>
+        {{ partial "header/profile" . }}
 
         <!-- Breadcrumbs row -->
 
-            {{ define "breadcrumb" }}
-                {{ with .Parent }}
-                    {{ template "breadcrumb" . }}
-                    <a href="{{ .URL }}">{{ if .IsHome }} $ {{ else }}{{ .Dir }}{{ end }}</a>&nbsp;>&nbsp;
-                {{ end }}
-            {{ end }}
-            {{ if not .IsHome }}
-                <div class="breadcrumb offset-md-1 d-none d-md-block">
-                    {{ template "breadcrumb" . }}
-                    {{ if .IsNode }}{{ .Dir }}{{ else }}{{ .File.TranslationBaseName }}{{ end }}
-                </div>
-            {{ end }}
+        {{ partial "header/breadcrumb" . }}
 
     </div>
 </div>
