@@ -5,8 +5,8 @@
     {{ end }}
 {{ end }}
 {{ if not .IsHome }}
-    <div class="breadcrumb offset-md-1 d-none d-md-block">
+    <nav class="breadcrumb offset-md-1 d-none d-md-block" role="navigation">
         {{ template "breadcrumb" . }}
         {{ if .IsNode }}{{ .File.Dir }}{{ else }}{{ .File.TranslationBaseName }}{{ end }}
-    </div>
+    </nav>
 {{ end }}

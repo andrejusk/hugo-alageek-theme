@@ -1,12 +1,12 @@
 <!-- Profile row -->
 
-<div class="row">
+<header class="row" role="banner">
 
     <!-- Logo -->
     
     <div class="col-auto offset-md-1 d-none d-md-block">
         {{ if .Site.Params.logofile }}
-            <a class="ml-md-4 logo" href="{{ .Site.BaseURL }}" alt="logo">
+            <a class="ml-md-4 logo" href="{{ .Site.BaseURL }}" alt="{{ .Site.Title }} logo" aria-label="{{ .Site.Title }} logo">
                 {{ readFile .Site.Params.logofile | safeHTML }}
             </a>
         {{ end }}
@@ -37,4 +37,4 @@
 
     </div>
     
-</div>
+</header>
