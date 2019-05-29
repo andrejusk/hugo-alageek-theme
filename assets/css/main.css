@@ -20,6 +20,8 @@ body {
         "Noto Sans", sans-serif, "Apple Color Emoji",
         "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
         !important;
+
+    font-display: swap;
 }
 
 a,
@@ -115,7 +117,7 @@ a:hover {
     margin-right: 0.45rem;
 }
 
-.wf-active .nav-active {
+.nav-active {
     opacity: 1 !important;
     font-weight: 700;
 }
@@ -213,6 +215,7 @@ a:hover {
 .content .markdown {
     font-family: "Merriweather", 
         Georgia, 'Times New Roman', Times, serif;
+    font-display: swap;
     font-size: 1.25em;
     line-height: 1.82em; /* 1.45x font-size */
     color: #313537;
