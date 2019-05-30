@@ -65,10 +65,6 @@ a:hover {
 .logo svg {
     width: 120px;
     max-height: 120px;
-    transition: transform 0.5s ease-out;
-}
-.logo svg:hover {
-    transform: rotateY(180deg);
 }
 
 .header h1.name {
