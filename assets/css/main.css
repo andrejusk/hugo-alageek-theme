@@ -442,6 +442,17 @@ a:hover {
     margin-right: 0;
 }
 
+.markdown ul {
+    list-style: none;
+}
+
+.markdown ul li:before {
+    content: '– ';
+}
+
+.markdown ul li li:before {
+    content: '- ';
+}
 
 /* 
    __            _            
