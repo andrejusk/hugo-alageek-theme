@@ -116,6 +116,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
     {{ end }}
 
+    <script src="bodymovin.js" crossorigin="anonymous"></script>
+    <script>
+        var container = document.getElementById('anim_container');
+        // Set up our animation 
+
+        var animData = {
+            container: container,
+            renderer: 'svg',
+            autoplay: true,
+            loop: true,
+            path : 'data.json'
+        };
+        var anim = bodymovin.loadAnimation(animData);
+    </script>
+
     {{ template "_internal/google_analytics_async.html" . }}
     {{ partial "footer_extra"  . }}
 </body>
